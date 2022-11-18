@@ -36,6 +36,7 @@ router.get('/:id/comments',async (req,res)=>{
         res.json(comments);
     }catch(err){
         console.error(err);
+        res.sendStatus(400)
     }
 })
 

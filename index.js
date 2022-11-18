@@ -5,12 +5,14 @@ const connect= require('./schemas');
 const usersRouter = require('./router/users');
 const indexRouter = require('./router')
 const commentRouter = require('./router/comments');
+var bodyParser = require('body-parser')
 
 app.set('port',process.env.PORT||3000);
 
 //morgan 설정
 app.use(morgan('dev'));//로그 보기
 
+app.use(bodyParser.json());
 app.use(express.urlencoded({extended:false}))
 
 connect();
